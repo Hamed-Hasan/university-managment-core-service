@@ -1,7 +1,18 @@
-import app from './app';
+import mongoose from 'mongoose'
+import config from './config/index'
+import app from './app'
 
-const port = process.env.PORT || 8000;
+async function boostrap() {
+  try {
+    await mongoose.connect(config.database_url as string)
+    console.log(`🛢   Database is connected successfully`)
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+    app.listen(config.port, () => {
+      console.log(`Application  listening on port ${config.port}`)
+    })
+  } catch (err) {
+    console.log('Failed to connect database', err)
+  }
+}
+
+boostrap()

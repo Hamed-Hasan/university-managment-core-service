@@ -1,43 +1,21 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import cors from 'cors';
+import express, { Application, Request, Response } from 'express'
+import cors from 'cors'
+// import usersRouter from './app/modules/users/users.route'
+const app: Application = express()
 
-dotenv.config();
+app.use(cors())
 
-const app = express();
+//parser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-// Enable CORS
-app.use(cors());
+// Application routes
 
-// Enable body parser middleware for JSON data
-app.use(express.json());
+// app.use('/api/v1/users/', usersRouter)
 
-// Enable extended URL encoding
-app.use(express.urlencoded({ extended: true }));
+//Testing
+app.get('/', async (req: Request, res: Response) => {
+  res.send('Working Successfully')
+})
 
-// Hello, World! route
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-// Connect to MongoDB using Mongoose
-const connectToDatabase = async () => {
-  try {
-    const mongodbUri = process.env.MONGODB_URI;
-    if (!mongodbUri) {
-      throw new Error(
-        'MongoDB URI is not defined in the environment variables.'
-      );
-    }
-
-    await mongoose.connect(mongodbUri);
-    console.log('Connected to MongoDB');
-  } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
-  }
-};
-
-connectToDatabase();
-
-export default app;
+export default app
