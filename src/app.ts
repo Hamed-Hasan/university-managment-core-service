@@ -1,7 +1,8 @@
 import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import usersRouter from './app/modules/users/users.route'
-import { globalErrors } from './middlewares/globalErrors'
+import globalErrorHandler from './middlewares/globalErrors'
+
 
 
 
@@ -22,13 +23,13 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/v1/users/', usersRouter)
 
-//Testing
-app.get('/', (req: Request, res: Response) => {
-  // res.send('Working Successfully')
-  throw new Error()
-})
+// //Testing
+// app.get('/', (req: Request, res: Response) => {
+//   // res.send('Working Successfully')
+//   throw new Error()
+// })
 
 // Error handling middleware
-app.use(globalErrors);
+app.use(globalErrorHandler)
 
 export default app
