@@ -10,3 +10,642 @@
 2023-06-02-10:43:54.544+03:00 INFO: Application  listening on port 8000
 {"level":"info","message":"🛢   Database is connected successfully","timestamp":"2023-06-02T07:46:55.532Z"}
 {"level":"info","message":"Application  listening on port 8000","timestamp":"2023-06-02T07:46:55.541Z"}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T07:47:46.198Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T07:47:46.213Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T07:52:30.484Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T07:52:30.511Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T07:52:37.193Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T07:52:37.206Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:13:07.580Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:13:07.598Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:15:35.544Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:15:35.572Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:16:16.550Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:16:16.597Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:16:35.689Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:16:35.702Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:16:41.691Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:16:41.738Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:19:59.739Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:19:59.749Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:44:18.788Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:44:18.800Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:44:21.159Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:44:21.176Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:44:54.439Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:44:54.454Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:44:59.431Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:44:59.443Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:45:08.041Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:45:08.069Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:45:56.278Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:45:56.295Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:46:11.415Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:46:11.443Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:46:50.452Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:46:50.492Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:47:01.734Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:47:01.752Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:47:18.392Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:47:18.413Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:47:21.668Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:47:21.678Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:50:51.751Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:50:51.782Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:51:10.039Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:51:10.059Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T08:51:24.902Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T08:51:24.927Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:33:57.613Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:33:57.633Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:46:45.052Z"
+}
+{
+  "level": "error",
+  "message": "Failed to connect database Cannot read properties of undefined (reading 'listen')",
+  "stack": "TypeError: Cannot read properties of undefined (reading 'listen')\n    at boostrap (D:\\Next-Level\\university-managment\\src\\server.ts:11:9)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "timestamp": "2023-06-02T10:46:45.076Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:46:57.916Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:46:57.926Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:47:01.989Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:47:02.011Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:47:41.303Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:47:41.313Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:48:05.249Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:48:05.275Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:53:57.994Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:53:58.005Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:54:25.702Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:54:25.729Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:54:33.728Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:54:33.736Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T10:55:21.642Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T10:55:21.677Z"
+}
+{
+  "body": "{\r\n  \"id\": \"333333\",\r\n  \"role\": \"admin\",\r\n\r\n}\r\n",
+  "expose": true,
+  "level": "error",
+  "status": 400,
+  "statusCode": 400,
+  "timestamp": "2023-06-02T10:57:43.470Z",
+  "type": "entity.parse.failed"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:03:37.006Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:03:37.022Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:03:40.447Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:03:40.456Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:04:03.954Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:04:03.966Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:06:53.596Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:06:53.628Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:08:03.610Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:08:03.640Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:08:40.797Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:08:40.830Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:09:52.195Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:09:52.221Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:10:49.731Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:10:49.753Z"
+}
+{
+  "body": "{\r\n    \"user\": {\r\n\r\n  \"role\": \"admin\",\r\n  \r\n    }\r\n \r\n}\r\n",
+  "expose": true,
+  "level": "error",
+  "status": 400,
+  "statusCode": 400,
+  "timestamp": "2023-06-02T11:11:17.989Z",
+  "type": "entity.parse.failed"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:12:29.075Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:12:29.102Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:12:56.307Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:12:56.318Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:13:06.186Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:13:06.209Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:13:09.447Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:13:09.458Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:13:11.826Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:13:11.835Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:15:47.773Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:15:47.798Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:17:03.119Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:17:03.131Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:17:17.256Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:17:17.272Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:19:31.456Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:19:31.469Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:19:36.348Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:19:36.357Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:20:58.050Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:20:58.066Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:21:06.795Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:21:06.804Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:23:28.333Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:23:28.357Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:23:31.917Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:23:31.932Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:23:36.286Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:23:36.312Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:24:00.825Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:24:00.854Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-02T11:24:03.392Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-02T11:24:03.400Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-03T15:49:13.830Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-03T15:49:13.853Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-03T15:54:56.875Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-03T15:54:56.903Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-03T15:56:02.861Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-03T15:56:02.872Z"
+}
+{
+  "level": "info",
+  "message": "🛢   Database is connected successfully",
+  "timestamp": "2023-06-03T15:56:10.993Z"
+}
+{
+  "level": "info",
+  "message": "Application  listening on port 8000",
+  "timestamp": "2023-06-03T15:56:11.003Z"
+}

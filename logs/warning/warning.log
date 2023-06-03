@@ -1,0 +1,24 @@
+{
+  "level": "error",
+  "message": "Failed to connect database Cannot read properties of undefined (reading 'listen')",
+  "stack": "TypeError: Cannot read properties of undefined (reading 'listen')\n    at boostrap (D:\\Next-Level\\university-managment\\src\\server.ts:11:9)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "timestamp": "2023-06-02T10:46:45.076Z"
+}
+{
+  "body": "{\r\n  \"id\": \"333333\",\r\n  \"role\": \"admin\",\r\n\r\n}\r\n",
+  "expose": true,
+  "level": "error",
+  "status": 400,
+  "statusCode": 400,
+  "timestamp": "2023-06-02T10:57:43.470Z",
+  "type": "entity.parse.failed"
+}
+{
+  "body": "{\r\n    \"user\": {\r\n\r\n  \"role\": \"admin\",\r\n  \r\n    }\r\n \r\n}\r\n",
+  "expose": true,
+  "level": "error",
+  "status": 400,
+  "statusCode": 400,
+  "timestamp": "2023-06-02T11:11:17.989Z",
+  "type": "entity.parse.failed"
+}

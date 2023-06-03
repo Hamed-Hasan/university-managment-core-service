@@ -25,5 +25,8 @@
   "env": {
     "browser": true,
     "es2021": true
+  },
+  "globals": {
+    "module": "readonly"
   }
 }
