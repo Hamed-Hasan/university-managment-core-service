@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 import config from './config/index'
 import app from './app'
-import logger from '../shared/logger'
+import { logger } from '../shared/logger'
+
 
 async function boostrap() {
   try {

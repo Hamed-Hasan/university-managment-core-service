@@ -1,8 +1,9 @@
-import express, { Application, Request, Response } from 'express'
+import express, { Application,  } from 'express'
 import cors from 'cors'
 import usersRouter from './app/modules/users/users.route'
 import globalErrorHandler from './middlewares/globalErrors'
 
+import academicSemesterRouter from './app/modules/academicSemester/academicSemester.route';
 
 
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 // Application routes
+app.use('/api/v1/academic-semesters', academicSemesterRouter);
 
 app.use('/api/v1/users/', usersRouter)
 

@@ -1,56 +1,59 @@
-import { createLogger, format, transports } from 'winston';
+/* eslint-disable no-undef */
 import path from 'path';
+import { createLogger, format, transports } from 'winston';
+import DailyRotateFile from 'winston-daily-rotate-file';
 
-// Define the log folder path
-const logFolder = path.join(process.cwd(), 'logs');
+const { combine, timestamp, label, printf } = format;
 
-// Define your logger configuration
+// Custom Log Format
+const myFormat = printf(({ level, message, label, timestamp }) => {
+  const date = new Date(timestamp);
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  return `${date.toDateString()} ${hour}:${minutes}:${seconds} [${label}] ${level}: ${message}`;
+});
+
 const logger = createLogger({
   level: 'info',
-  format: format.combine(
-    format.timestamp(),
-    format.json({ space: 2 })
-  ),
+  format: combine(label({ label: 'University-Auth' }), timestamp(), myFormat),
   transports: [
-    new transports.Console({
-      format: format.combine(
-        format.timestamp(),
-        format.json({ space: 2 })
+    new transports.Console(),
+    new DailyRotateFile({
+      filename: path.join(
+        process.cwd(),
+        'logs',
+        'winston',
+        'successes',
+        'University-Authu-%DATE%-success.log'
       ),
-    }),
-    new transports.File({
-      filename: path.join(logFolder, 'error/error.log'),
-      level: 'error',
-      format: format.combine(
-        format.timestamp(),
-        format.json({ space: 2 })
-      ),
-    }),
-    new transports.File({
-      filename: path.join(logFolder, 'success/success.log'),
-      level: 'info',
-      format: format.combine(
-        format.timestamp(),
-        format.json({ space: 2 })
-      ),
-    }),
-    new transports.File({
-      filename: path.join(logFolder, 'info/info.log'),
-      level: 'info',
-      format: format.combine(
-        format.timestamp(),
-        format.json({ space: 2 })
-      ),
-    }),
-    new transports.File({
-      filename: path.join(logFolder, 'warning/warning.log'),
-      level: 'warn',
-      format: format.combine(
-        format.timestamp(),
-        format.json({ space: 2 })
-      ),
+      datePattern: 'YYYY-DD-MM-HH',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d',
     }),
   ],
 });
 
-export default logger;
+const errorLogger = createLogger({
+  level: 'error',
+  format: combine(label({ label: 'University-Auth' }), timestamp(), myFormat),
+  transports: [
+    new transports.Console(),
+    new DailyRotateFile({
+      filename: path.join(
+        process.cwd(),
+        'logs',
+        'winston',
+        'error',
+        'University-Authu-%DATE%-error.log'
+      ),
+      datePattern: 'YYYY-DD-MM-HH',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d',
+    }),
+  ],
+});
+
+export { logger, errorLogger };
