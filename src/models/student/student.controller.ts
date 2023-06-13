@@ -1,24 +1,47 @@
 import { Request, Response } from 'express';
-import {
-  createStudent,
-  getStudentById,
-  updateStudent,
-  deleteStudent,
-} from './student.service';
+import { createStudent, getStudentById, updateStudent, deleteStudent } from './student.service';
+import { createUserService } from '../user/user.service';
+import { startSession } from 'mongoose';
 
-export const createStudentController = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const createStudentController = async (req: Request, res: Response): Promise<void> => {
+  const session = await startSession();
+
   try {
-    const student = req.body.student;
-    const createdStudent = await createStudent(student);
+    session.startTransaction();
+
+    const { student, user } = req.body;
+    const { password, role } = user;
+
+    // Validate the password and role fields
+    if (!password || !role) {
+      return res.status(400).json({
+        success: false,
+        message: 'Failed to create student',
+        error: 'Password and role are required fields',
+      });
+    }
+
+    // Create user
+    const createdUser = await createUserService(user, session);
+
+    // Create student
+    const createdStudent = await createStudent(student, session);
+
+    await session.commitTransaction();
+    session.endSession();
+
     res.status(201).json({
       success: true,
       message: 'Student created successfully',
-      data: createdStudent,
+      data: {
+        student: createdStudent,
+        user: createdUser,
+      },
     });
   } catch (error) {
+    await session.abortTransaction();
+    session.endSession();
+
     res.status(500).json({
       success: false,
       message: 'Failed to create student',
@@ -27,10 +50,7 @@ export const createStudentController = async (
   }
 };
 
-export const getStudentByIdController = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getStudentByIdController = async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id;
     const student = await getStudentById(id);
@@ -55,10 +75,7 @@ export const getStudentByIdController = async (
   }
 };
 
-export const updateStudentController = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const updateStudentController = async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id;
     const updates = req.body.student;
@@ -84,10 +101,7 @@ export const updateStudentController = async (
   }
 };
 
-export const deleteStudentController = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const deleteStudentController = async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id;
     await deleteStudent(id);

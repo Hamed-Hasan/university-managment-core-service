@@ -1,12 +1,14 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 import { Student } from './student.interface';
 
 const studentSchema = new Schema<Student>(
   {
+    
     id: {
       type: String,
       required: true,
     },
+   
     name: {
       firstName: {
         type: String,
@@ -102,18 +104,21 @@ const studentSchema = new Schema<Student>(
         required: true,
       },
     },
-    academicSemester: {
-      type: String,
-      required: true,
-    },
-    academicDepartment: {
-      type: String,
-      required: true,
-    },
-    academicFaculty: {
-      type: String,
-      required: true,
-    },
+    // academicFaculty: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'AcademicFaculty',
+    //     required: true,
+    //   },
+    //   academicDepartment: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'AcademicDepartment',
+    //     required: true,
+    //   },
+    //   academicSemester: {
+    //     type: Schema.Types.ObjectId, // academicSemester --> _id
+    //     ref: 'AcademicSemester',
+    //     required: true,
+    //   },
   },
   {
     timestamps: true,
