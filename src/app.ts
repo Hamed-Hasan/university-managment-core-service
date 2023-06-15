@@ -1,42 +1,68 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import routes from './routes';
-import logger from './logger';
-import CustomError from './errors/CustomError';
-dotenv.config();
-import notFoundHandler from './middleware/notFoundHandler';
-import { UserRouter } from './models/user/user.route';
-import { academicSemesterRoutes } from './models/academicSemister/academicSemester.route';
+import cors from 'cors';
+import express, { Application, NextFunction, Request, Response } from 'express';
+import httpStatus from 'http-status';
+import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import routes from './app/routes';
+import { findLastFacultyId, generateFacultyId } from './app/modules/academicFaculty/academicFaculty.utils';
+const app: Application = express();
 
+app.use(cors());
 
-
-
-
-const app = express();
-
-// Middleware
+//parser
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Routes
+// app.use('/api/v1/users/', UserRoutes);
+// app.use('/api/v1/academic-semesters', AcademicSemesterRoutes);
+app.use('/api/v1', routes);
 
-app.use('/api/v1', UserRouter);
-app.use('/api/v1', academicSemesterRoutes);
-app.use(notFoundHandler); // Register the `notFoundHandler` middleware at the end
+//Testing
+// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+//   throw new Error('Testing Error logger')
+// })
 
-// Global error handler middleware
-app.use(CustomError.errorHandler);
+//global error handler
+app.use(globalErrorHandler);
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => {
-    logger.info('Connected to MongoDB');
-  })
-  .catch((error) => {
-    logger.error('Error connecting to MongoDB:', error);
+
+
+
+const main = async () => {
+  try {
+    // Retrieve the last faculty ID
+    const lastFacultyId = await findLastFacultyId();
+    console.log('Last Faculty ID:', lastFacultyId);
+
+    // Generate faculty ID and display it in the console
+    const facultyId = await generateFacultyId();
+    console.log('Generated Faculty ID:', facultyId);
+
+    // Rest of your application code...
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+// Call the main function to start the ID generation process
+// main();
+
+
+
+
+
+//handle not found
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: 'Not Found',
+    errorMessages: [
+      {
+        path: req.originalUrl,
+        message: 'API Not Found',
+      },
+    ],
   });
+  next();
+});
 
 export default app;
