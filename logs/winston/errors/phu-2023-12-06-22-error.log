@@ -1,8 +1,0 @@
-Mon Jun 12 2023 22:42:27 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ E11000 duplicate key error collection: university-management.academicfaculties index: title_1 dup key: { title: "Faculty of Software Enginering" }
-Mon Jun 12 2023 22:44:28 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ Cannot read properties of undefined (reading '_id')
-Mon Jun 12 2023 22:45:32 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ E11000 duplicate key error collection: university-management.academicfaculties index: title_1 dup key: { title: "Faculty of Software Enginering......." }
-Mon Jun 12 2023 22:45:37 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ Cannot read properties of undefined (reading '_id')
-Mon Jun 12 2023 22:45:43 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ E11000 duplicate key error collection: university-management.academicfaculties index: title_1 dup key: { title: "Faculty of Software Enginering......ffffff." }
-Mon Jun 12 2023 22:45:46 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ Cannot read properties of undefined (reading '_id')
-Mon Jun 12 2023 22:46:30 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ Cannot read properties of undefined (reading 'id')
-Mon Jun 12 2023 22:47:6 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ Cannot read properties of undefined (reading '_id')
