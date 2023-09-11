@@ -120,3 +120,16 @@ model Building {
 
   @@map("buildings")
 }
+
+model Room {
+  id                          String                       @id @default(uuid())
+  roomNumber                  String
+  floor                       String
+  createdAt                   DateTime                     @default(now())
+  updatedAt                   DateTime                     @updatedAt
+  building                    Building                     @relation(fields: [buildingId], references: [id])
+  buildingId                  String
+  offeredCourseClassSchedules OfferedCourseClassSchedule[]
+
+  @@map("rooms")
+}
