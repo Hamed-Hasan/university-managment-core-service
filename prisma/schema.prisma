@@ -150,3 +150,12 @@ model Course {
   @@map("courses")
 }
 
+model CourseToPrerequisite {
+  courseId       String
+  preRequisiteId String
+
+  course       Course @relation(fields: [courseId], references: [id], name: "CourseToPrerequisite")
+  preRequisite Course @relation(fields: [preRequisiteId], references: [id], name: "PrerequisiteToCourse")
+
+  @@id([courseId, preRequisiteId])
+}
