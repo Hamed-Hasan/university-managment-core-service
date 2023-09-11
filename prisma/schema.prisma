@@ -25,3 +25,15 @@ model AcademicSemester {
 
   @@map("academic_semesters")
 }
+
+model AcademicFaculty {
+  id                  String               @id @default(uuid())
+  title               String
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  academicDepartments AcademicDepartment[]
+  students            Student[]
+  faculties           Faculty[]
+
+  @@map("academic_faculty")
+}
