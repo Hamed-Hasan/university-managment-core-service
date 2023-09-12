@@ -170,3 +170,4 @@ model CourseFaculty {
   @@id([courseId, facultyId])
   @@map("course_faculties")
 }
+
