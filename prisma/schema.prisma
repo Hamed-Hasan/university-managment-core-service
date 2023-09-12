@@ -362,3 +362,20 @@ enum WeekDays {
   THURSDAY
   FRIDAY
 }
+
+enum StudentEnrolledCourseStatus {
+  ONGOING
+  COMPLETED
+  WITHDRAWN
+}
+
+enum ExamType {
+  MIDTERM
+  FINAL
+}
+
+enum PaymentStatus {
+  PENDING
+  PARTIAL_PAID
+  FULL_PAID
+}
