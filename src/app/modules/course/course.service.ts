@@ -242,3 +242,83 @@ const updateOneInDB = async (
 
     return responseData
 }
+
+const deleteByIdFromDB = async (id: string): Promise<Course> => {
+    await prisma.courseToPrerequisite.deleteMany({
+        where: {
+            OR: [
+                {
+                    courseId: id
+                },
+                {
+                    preRequisiteId: id
+                }
+            ]
+        }
+    });
+
+    const result = await prisma.course.delete({
+        where: {
+            id
+        }
+    });
+    return result;
+};
+
+const assignFaculies = async (
+    id: string,
+    payload: string[]
+): Promise<CourseFaculty[]> => {
+    await prisma.courseFaculty.createMany({
+        data: payload.map((facultyId) => ({
+            courseId: id,
+            facultyId: facultyId
+        }))
+    })
+
+    const assignFacultiesData = await prisma.courseFaculty.findMany({
+        where: {
+            courseId: id
+        },
+        include: {
+            faculty: true
+        }
+    })
+
+    return assignFacultiesData;
+}
+
+const removeFaculties = async (
+    id: string,
+    payload: string[]
+): Promise<CourseFaculty[] | null> => {
+    await prisma.courseFaculty.deleteMany({
+        where: {
+            courseId: id,
+            facultyId: {
+                in: payload
+            }
+        }
+    })
+
+    const assignFacultiesData = await prisma.courseFaculty.findMany({
+        where: {
+            courseId: id
+        },
+        include: {
+            faculty: true
+        }
+    })
+
+    return assignFacultiesData
+}
+
+export const CourseService = {
+    insertIntoDB,
+    getAllFromDB,
+    getByIdFromDB,
+    deleteByIdFromDB,
+    updateOneInDB,
+    assignFaculies,
+    removeFaculties
+}
