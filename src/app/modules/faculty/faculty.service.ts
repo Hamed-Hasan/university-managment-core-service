@@ -101,3 +101,240 @@ const getByIdFromDB = async (id: string): Promise<Faculty | null> => {
     });
     return result;
 };
+
+const updateOneInDB = async (id: string, payload: Partial<Faculty>): Promise<Faculty> => {
+    const result = await prisma.faculty.update({
+        where: {
+            id
+        },
+        data: payload,
+        include: {
+            academicFaculty: true,
+            academicDepartment: true
+        }
+    });
+    return result;
+};
+
+const deleteByIdFromDB = async (id: string): Promise<Faculty> => {
+    const result = await prisma.faculty.delete({
+        where: {
+            id
+        },
+        include: {
+            academicFaculty: true,
+            academicDepartment: true
+        }
+    });
+    return result;
+};
+
+const assignCourses = async (
+    id: string,
+    payload: string[]
+): Promise<CourseFaculty[]> => {
+    await prisma.courseFaculty.createMany({
+        data: payload.map((courseId) => ({
+            facultyId: id,
+            courseId: courseId
+        }))
+    })
+
+    const assignCoursesData = await prisma.courseFaculty.findMany({
+        where: {
+            facultyId: id
+        },
+        include: {
+            course: true
+        }
+    })
+
+    return assignCoursesData;
+}
+
+const removeCourses = async (
+    id: string,
+    payload: string[]
+): Promise<CourseFaculty[] | null> => {
+    await prisma.courseFaculty.deleteMany({
+        where: {
+            facultyId: id,
+            courseId: {
+                in: payload
+            }
+        }
+    })
+
+    const assignCoursesData = await prisma.courseFaculty.findMany({
+        where: {
+            facultyId: id
+        },
+        include: {
+            course: true
+        }
+    })
+
+    return assignCoursesData
+}
+
+const myCourses = async (
+    authUser: {
+        userId: string,
+        role: string
+    },
+    filter: {
+        academicSemesterId?: string | null | undefined,
+        courseId?: string | null | undefined
+    }
+) => {
+    if (!filter.academicSemesterId) {
+        const currentSemester = await prisma.academicSemester.findFirst({
+            where: {
+                isCurrent: true
+            }
+        });
+
+        filter.academicSemesterId = currentSemester?.id
+    }
+
+    const offeredCourseSections = await prisma.offeredCourseSection.findMany({
+        where: {
+            offeredCourseClassSchedules: {
+                some: {
+                    faculty: {
+                        facultyId: authUser.userId
+                    }
+                }
+            },
+            offeredCourse: {
+                semesterRegistration: {
+                    academicSemester: {
+                        id: filter.academicSemesterId
+                    }
+                }
+            }
+        },
+        include: {
+            offeredCourse: {
+                include: {
+                    course: true
+                }
+            },
+            offeredCourseClassSchedules: {
+                include: {
+                    room: {
+                        include: {
+                            building: true
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    const couseAndSchedule = offeredCourseSections.reduce((acc: any, obj: any) => {
+        //console.log(obj)
+
+        const course = obj.offeredCourse.course;
+        const classSchedules = obj.offeredCourseClassSchedules
+
+        const existingCourse = acc.find((item: any) => item.couse?.id === course?.id);
+        if (existingCourse) {
+            existingCourse.sections.push({
+                section: obj,
+                classSchedules
+            })
+        }
+        else {
+            acc.push({
+                course,
+                sections: [
+                    {
+                        section: obj,
+                        classSchedules
+                    }
+                ]
+            })
+        }
+        return acc;
+    }, []);
+    return couseAndSchedule;
+};
+
+const getMyCourseStudents = async (
+    filters: IFacultyMyCourseStudentsRequest,
+    options: IPaginationOptions,
+    authUser: any
+): Promise<IGenericResponse<Student[]>> => {
+    const { limit, page, skip } = paginationHelpers.calculatePagination(options);
+    console.log(authUser)
+    if (!filters.academicSemesterId) {
+        const currentAcademicSemester = await prisma.academicSemester.findFirst({
+            where: {
+                isCurrent: true
+            }
+        });
+
+        if (currentAcademicSemester) {
+            filters.academicSemesterId = currentAcademicSemester.id;
+        }
+    }
+
+    const offeredCourseSections = await prisma.studentSemesterRegistrationCourse.findMany({
+        where: {
+            offeredCourse: {
+                course: {
+                    id: filters.courseId
+                }
+            },
+            offeredCourseSection: {
+                offeredCourse: {
+                    semesterRegistration: {
+                        academicSemester: {
+                            id: filters.academicSemesterId
+                        }
+                    }
+                },
+                id: filters.offeredCourseSectionId
+            }
+        },
+        include: {
+            student: true
+        },
+        take: limit,
+        skip
+    });
+
+    const students = offeredCourseSections.map(
+        (offeredCourseSection) => offeredCourseSection.student
+    );
+
+    const total = await prisma.studentSemesterRegistrationCourse.count({
+        where: {
+            offeredCourse: {
+                course: {
+                    id: filters.courseId
+                }
+            },
+            offeredCourseSection: {
+                offeredCourse: {
+                    semesterRegistration: {
+                        academicSemester: {
+                            id: filters.academicSemesterId
+                        }
+                    }
+                },
+                id: filters.offeredCourseSectionId
+            }
+        }
+    });
+
+    return {
+        meta: {
+            total,
+            page,
+            limit
+        },
+        data: students
+    };
+};
